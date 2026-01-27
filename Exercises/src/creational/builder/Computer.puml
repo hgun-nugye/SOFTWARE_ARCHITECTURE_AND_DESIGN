@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Computer{
+    -cpu: String
+    -ram: String
+    -storage: String
+    -screen: String
+
+    #Computer()
+    #Computer(cpu: String, ram: String, storage: String, gpu: String, os: String)
+}
+
+class Builder{
+    -cpu: String
+        -ram: String
+        -storage: String
+        -screen: String
+
+    +setCpu(cpu: String): Builder
+    +setRam(ram: String): Builder
+    +setStorage(storage: String): Builder
+    +setScreen(screen: String): Builder
+    +build(): Computer
+}
+
+Builder ..> Computer
+
+note right of Builder
+build() bắt buộc phải có 
+end note
+
+@enduml
