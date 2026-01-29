@@ -1,11 +1,12 @@
 package creational.singleton;
 
 public class Singleton {
-    private static Singleton instance;
-    private int cout = 0;
+    private static Singleton instance; //static tạo bản sao duy nhất
+    private int count = 0;
     private Singleton() {
     }
 
+    //static để tạo bản sao duy nhất  không cần tạo đối tượng mới
     protected static Singleton getInstance() {
         if (instance == null) {
             instance = new Singleton();
@@ -14,6 +15,6 @@ public class Singleton {
     }
 
     public void myPrint(){
-        System.out.println(++cout);
+        System.out.println(++count);
     }
 }

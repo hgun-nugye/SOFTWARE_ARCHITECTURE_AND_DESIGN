@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class HoaDonHeader{
+    - String maHD
+    - Date ngayLap
+    - String tenKH
+    + HoaDonHeader (String maHD, Date ngayLap, String tenKH)
+
+}
+
+class CTHD{
+    - String sanPham
+    - int soLuong
+    - double donGia
+    - double chietKhau
+    + CTHD (String sanPham, int soLuong, double donGia, double chietKhau)
+
+}
+
+class HoaDon{
+    - HoaDonHeader header
+    - List<CTHD> list
+    + HoaDon (HoaDonHeader header, List<CTHD> list)
+}
+
+class HoaDonBuilder{
+    - HoaDonHeader currentHeader
+    - List<CTHD> currentCTHD
+    + HoaDonBuilder setHeader(String maHD, Date ngayLap, String tenKH)
+    + HoaDonBuilder addChiTiet(String sanPham, int soLuong, double donGia, double chietKhau)
+    + HoaDonBuilder build()
+}
+
+HoaDonBuilder ..> HoaDon
+HoaDon  *-- "1"HoaDonHeader
+HoaDon *-- "*"CTHD
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Book{
+    - String title, author
+    - int page
+    - List<String> chapter
+    + Book(String t, String a, int p, List<String> c)
+    + String toString()
+}
+
+class BookBuilder{
+     - String title, author
+     - int page
+     - List<String> chapter
+     + BookBuilder setTitle(String t)
+     + BookBuilder setAuthor(String a)
+     + BookBuilder setPage(int p)
+     + BookBuilder addChapter(String c)
+     + Book build()
+}
+
+BookBuilder ..> Book
+@enduml
