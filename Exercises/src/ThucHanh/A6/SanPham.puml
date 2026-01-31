@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class SanPham{
+    - String maSP, tenSP
+    - double donGia
+    - int soLuong
+
+    + SanPham (String maSP, String tenSP, double donGia, int soLuong)
+    + String toString()
+    + String getMaSP()
+}
+
+class DataAccessImpl{
+    - static DataAccessImpl instance
+    - List<SanPham> dsSanPham
+    - DataAccessImpl()
+    + static DataAccessImpl getInstance()
+    + void add(SanPham sp)
+    + void delete(SanPham sp)
+    + void update(SanPham sp)
+    + List<SanPham> getAll()
+}
+
+class UI {
+    - String uiName;
+    + void userInput()
+}
+
+interface IDataAccess{
+     + void add(SanPham sp)
+     + void delete(SanPham sp)
+     + void update(SanPham sp)
+     + List<String> getAll()
+}
+
+IDataAccess <|.. DataAccessImpl
+UI ..> IDataAccess: access
+UI ..> DataAccessImpl: calls getInstance()
+DataAccessImpl o-- SanPham: manages
+@enduml
