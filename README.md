@@ -20,8 +20,3 @@ The repository is intended to support learning and practice for students studyin
 - Design extension (Plant4UMLidea)
 - Java (for implementation examples)
 - IntelliJ IDEA (IDE)
-
-## Author
-
-Course instructor: **PhD. Huỳnh Tuấn Anh**  
-Institution: **Nha Trang University**
