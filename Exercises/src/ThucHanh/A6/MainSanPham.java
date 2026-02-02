@@ -34,7 +34,7 @@ public class MainSanPham {
                     break;
 
                 case 4:
-                    getALL(dataAccess);
+                    getAll(dataAccess);
                     break;
 
                 case 0:
@@ -46,8 +46,6 @@ public class MainSanPham {
             }
         }
     }
-
-    // ================== CÁC HÀM XỬ LÝ ==================
 
     private static void add(Scanner sc, IDataAccess dataAccess) {
         System.out.print("Mã SP: ");
@@ -76,6 +74,20 @@ public class MainSanPham {
         System.out.print("Mã SP cần cập nhật: ");
         String maSP = sc.nextLine();
 
+        boolean check = false;
+        for(SanPham sp : dataAccess.getAll()){
+            if(!sp.getMaSP().equalsIgnoreCase(maSP)){
+                check = true;
+            } else {
+                check = false;
+                break;
+            }
+        }
+        if(check){
+            System.out.println("Sản phẩm với mã " + maSP + " không tồn tại.");
+            return;
+        }
+
         System.out.print("Tên mới: ");
         String tenSP = sc.nextLine();
 
@@ -89,7 +101,11 @@ public class MainSanPham {
         dataAccess.update(sp);
     }
 
-    private static void getALL(IDataAccess dataAccess) {
+    private static void getAll(IDataAccess dataAccess) {
+        if(dataAccess.getAll().isEmpty()){
+            System.out.println("Danh sách sản phẩm trống.");
+            return;
+        }
         System.out.println("\n\t\t--- DANH SÁCH SẢN PHẨM ---");
         for (SanPham sp : dataAccess.getAll()) {
             System.out.println(sp);

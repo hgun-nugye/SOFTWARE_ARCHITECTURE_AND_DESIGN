@@ -50,7 +50,6 @@ public class DataAccessImpl implements IDataAccess {
                 return;
             }
         }
-        System.out.println("Sản phẩm với mã " + sp.getMaSP() + " không tồn tại.");
     }
 
     @Override
