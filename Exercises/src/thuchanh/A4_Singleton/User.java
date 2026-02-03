@@ -1,4 +1,4 @@
-package ThucHanh.A4_Singleton;
+package thuchanh.A4_Singleton;
 
 public class User {
     private String name;

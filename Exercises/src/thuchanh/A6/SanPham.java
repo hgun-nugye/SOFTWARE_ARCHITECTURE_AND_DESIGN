@@ -1,4 +1,4 @@
-package ThucHanh.A6;
+package thuchanh.A6;
 
 public class SanPham {
     private String maSP, tenSP;

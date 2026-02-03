@@ -1,4 +1,4 @@
-package ThucHanh.A1_Builder;
+package thuchanh.A1_Builder;
 
 public class CTHD {
     String sanPham;

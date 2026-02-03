@@ -1,4 +1,4 @@
-package ThucHanh.A4_Singleton;
+package thuchanh.A4_Singleton;
 
 import java.util.HashSet;
 import java.util.Set;

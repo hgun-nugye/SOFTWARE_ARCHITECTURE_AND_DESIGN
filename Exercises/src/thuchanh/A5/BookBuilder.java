@@ -1,4 +1,4 @@
-package ThucHanh.A5;
+package thuchanh.A5;
 
 import java.util.ArrayList;
 import java.util.List;

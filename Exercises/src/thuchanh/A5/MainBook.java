@@ -1,4 +1,4 @@
-package ThucHanh.A5;
+package thuchanh.A5;
 
 public class MainBook {
     public static void main(String[] args) {

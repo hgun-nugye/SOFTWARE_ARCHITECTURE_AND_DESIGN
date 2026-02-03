@@ -1,4 +1,4 @@
-package ThucHanh.A6;
+package thuchanh.A6;
 
 import java.util.Scanner;
 
