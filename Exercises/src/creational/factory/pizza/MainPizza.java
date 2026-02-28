@@ -8,5 +8,4 @@ public class MainPizza{
         Pizza pizza = p.orderPizza(PizzaType.PHOMAI);
         System.out.println(pizza);
     }
-    // vẽ lại sơ đồ cho đúng với cấu trúc code
 }
