@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class RemoveStopWord extends TokenrizerDecorator {
-    public RemoveStopWord(String cau, Tokenrizer cauXuLy) {
+public class RemoveStopWord extends TokenizerDecorator {
+    public RemoveStopWord(String cau, Tokenizer cauXuLy) {
         super(cau, cauXuLy);
     }
 

@@ -3,10 +3,10 @@ package thuchanh.B2_Tokenize;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class Tokenrizer {
+public abstract class Tokenizer {
     String cau;
 
-    public Tokenrizer(String cau) {
+    public Tokenizer(String cau) {
         this.cau = cau;
     }
 

@@ -2,7 +2,7 @@ package thuchanh.B2_Tokenize;
 
 import java.util.List;
 
-public class TokenString extends Tokenrizer {
+public class TokenString extends Tokenizer {
     public TokenString(String cau) {
         super(cau);
     }

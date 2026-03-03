@@ -3,8 +3,8 @@ package thuchanh.B2_Tokenize;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RemovePunctuation extends TokenrizerDecorator {
-    public RemovePunctuation(String cau, Tokenrizer cauXuLy) {
+public class RemovePunctuation extends TokenizerDecorator {
+    public RemovePunctuation(String cau, Tokenizer cauXuLy) {
         super(cau, cauXuLy);
     }
 
