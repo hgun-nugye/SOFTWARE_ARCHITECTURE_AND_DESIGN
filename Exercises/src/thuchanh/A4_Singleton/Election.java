@@ -9,7 +9,7 @@ public class Election {
 
     private Set<String> userWhoVoted;
     private Election(){
-        userWhoVoted = new HashSet<>();
+        userWhoVoted = new HashSet<>(); // HashSet không cho trùng giá trị, nên sẽ tự động loại bỏ những người đã bầu rồi
     }
 
     public static Election getInstance(){
