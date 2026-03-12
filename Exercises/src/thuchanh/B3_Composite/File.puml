@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class FileItem{}
+
+class Folder{
+    - List<AbstractFile> children
+    + void addItem(AbstractFile item)
+    + void removeItem(AbstractFile item)
+}
+
+abstract class AbstractFile{
+    # String name
+    # String ngayTao
+    # AbstractFile parent
+    + AbstractFile(String name, Sring ngayTao)
+    + void setParent(AbstractFile parent)
+    + abstract String getStringTreeFolder()
+    + abstract String getPath()
+
+}
+
+AbstractFile <|-- FileItem
+AbstractFile <|-- Folder
+
+Folder --> AbstractFile: chua
+AbstractFile --> AbstractFile: thuoc ve
+
+
+@enduml
