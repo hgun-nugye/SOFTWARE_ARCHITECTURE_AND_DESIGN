@@ -7,6 +7,4 @@ public abstract class CondimentDecorator extends Beverage{
         super(description);
         this.beverage = beverage;
     }
-
-
 }

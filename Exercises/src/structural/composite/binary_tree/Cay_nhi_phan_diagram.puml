@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Nut{
+    + int giaTri
+    +{abstract} void duyet()
+    +{abstract} void themTrai(Nut n)
+    +{abstract} void themPhai(Nut n)
+    +{abstract} void XoaTrai()
+    +{abstract} void XoaPhai()
+}
+
+class NutLa{
+
+}
+
+class NutTrong{}
+
+Nut <|-- NutLa
+Nut <|-- NutTrong
+
+NutTrong --> Nut: trai
+NutTrong --> Nut: phai
+@enduml
