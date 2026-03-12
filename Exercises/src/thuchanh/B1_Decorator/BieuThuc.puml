@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class BieuThuc{
+    + giaTri(): float
+    + bieuThuc(): String
+}
+
+class BieuThucDonGian{
+    - toanHang: float
+    + <<Override>> giaTri(): float
+    + <<Override>> bieuThuc(): String
+}
+
+class BieuThucDecorator{
+    + <<Override>> giaTri(): float
+    + <<Override>> bieuThuc(): String
+}
+
+class Cong{
+    - toanHang: float
+}
+
+class Tru{
+    - toanHang: float
+}
+class Nhan{
+    - toanHang: int
+}
+class Chia{
+    toanHang: int
+}
+BieuThucDonGian--|>BieuThuc
+
+BieuThucDecorator --|> BieuThuc
+BieuThucDecorator --> BieuThuc: bieuThuc
+
+Cong --|>BieuThucDecorator
+Tru --|>BieuThucDecorator
+Nhan --|>BieuThucDecorator
+Chia --|>BieuThucDecorator
+@enduml
