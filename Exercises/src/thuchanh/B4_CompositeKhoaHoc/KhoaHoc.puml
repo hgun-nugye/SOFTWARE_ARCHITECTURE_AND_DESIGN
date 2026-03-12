@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class MonHoc{
+    + int soTinChi
+    + doublle hocPhi
+}
+
+class NhomHocTap{
+    - List<KHHT> danhSach
+    + void them(KHHT kh)
+    + void xoa(KHHT kh)
+}
+
+abstract class KHHT{
+    + String ten
+    + abstract int tongSoTinChi()
+    + abstract double tongSoHocPhi()
+    + abstract string lietKe(String prefix)
+}
+
+KHHT<|-- MonHoc
+KHHT<|-- NhomHocTap
+NhomHocTap--> KHHT: quan ly (danh sach)
+
+@enduml
