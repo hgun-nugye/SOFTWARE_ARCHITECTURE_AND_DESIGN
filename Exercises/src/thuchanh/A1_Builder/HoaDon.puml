@@ -29,7 +29,7 @@ class HoaDonBuilder{
     - List<CTHD> currentCTHD
     + HoaDonBuilder setHeader(String maHD, Date ngayLap, String tenKH)
     + HoaDonBuilder addChiTiet(String sanPham, int soLuong, double donGia, double chietKhau)
-    + HoaDonBuilder build()
+    + HoaDon build()
 }
 
 HoaDonBuilder ..> HoaDon
