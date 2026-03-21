@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ATM{
+    + ATMListener taiKhoan
+    + void nhanThe(ATMListener taiKhoan)
+    + void traThe()
+    + void rutTien(double soTienRut)
+}
+
+interface ATMListener{
+    boolean kiemTraSoDu(double soTienRut)
+    void nhanThongBao(double soTienRut, boolean trangThai)
+}
+
+class TaiKhoan{
+    String tenTK
+    double soDu
+}
+
+ATM --> ATMListener: taiKhoan
+TaiKhoan --> ATM: atm
+TaiKhoan ..|>ATMListener
+
+@enduml
