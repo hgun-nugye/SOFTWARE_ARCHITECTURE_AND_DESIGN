@@ -1,0 +1,33 @@
+@startuml
+interface Subject{
+    + void registerObserver(Observer o)
+    + void removeObserver(Observer o)
+    + void notifyObservers()
+}
+
+interface Observer{
+    + void update(int thoiGian, int countDown, int grade)
+
+}
+
+class PlayerData{
+    - List<Observer> observers
+    - int thoiGian, countDown, grade
+    + void registerObserver(Observer o)
+    + void removeObserver(Observer o)
+    + void notifyObservers()
+}
+
+class Dashboard{
+    - int thoiGian, countDown, grade
+    + void update(int thoiGian, int countDown, int grade)
+    + void display()
+}
+
+Subject <|.. PlayerData
+Observer <|.. Dashboard
+PlayerData --> Observer
+Dashboard..> PlayerData
+
+
+@enduml
