@@ -1,0 +1,21 @@
+@startuml
+abstract class ElectricityCalculator{
+    # ElectricityCalculator nextCalculator
+    + ElectricityCalculator setNextCalculator(ElectricityCalculator next)
+    + {abstract} double calculateBill(int kWh)
+}
+
+class TierCalculator{
+    - String tierName
+    - int capacity
+    - double price
+    + TierCalculator(String tierName, int capacity, double price)
+    + double calculateBill(int kWh)
+}
+
+class Client{}
+
+ElectricityCalculator <|-- TierCalculator
+ElectricityCalculator --> ElectricityCalculator : nextCalculator
+Client ..> ElectricityCalculator: uses
+@enduml
