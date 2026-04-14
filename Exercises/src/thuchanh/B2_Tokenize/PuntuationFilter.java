@@ -11,7 +11,7 @@ public class PuntuationFilter extends TokenierDecorator{
     public List<String> tokenize() {
         List<String> tokens = super.tokenize();
         for(int i=0; i<tokens.size(); i++){
-            String cleanedToken = tokens.get(i).replaceAll("[^a-zA-Z0-9A-ZÀ-ỹ]", "");
+            String cleanedToken = tokens.get(i).replaceAll("[^a-z0-9A-ZÀ-ỹ]", "");
             tokens.set(i, cleanedToken);
         }
         tokens.removeIf(String::isEmpty);

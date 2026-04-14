@@ -1,0 +1,55 @@
+@startuml
+abstract class HoaDon{
+    + double getGia()
+    + void getMoTa()
+}
+
+class SanPhamCoBan{
+    - String ten
+    - double gia
+    - String moTa
+    + SanPhamCoBan(String ten, double gia, String moTa)
+    + void getMoTa()
+    + double getGia()
+}
+
+abstract class HoaDonDecorator{
+    # HoaDon hoaDon
+    + HoaDonDecorator(HoaDon hoaDon)
+    + void getMoTa()
+    + double getGia()
+}
+
+class Topping{
+    + String tenTopping
+    + double giaTopping
+    + void getMoTa()
+    + double getGia()
+}
+class Sauce{
+    + String tenSauce
+    + double giaSauce
+    + void getMoTa()
+    + double getGia()
+}
+class DongGoiDacBiet{
+    +String tenDongGoi
+    + void getMoTa()
+    + double getGia()
+}
+class MaGiamGia{
+    + String tenMaGiamGia
+    + double giaTriGiam
+    + void getMoTa()
+    + double getGia()
+}
+
+
+SanPhamCoBan --|> HoaDon
+HoaDonDecorator --|> HoaDon
+HoaDonDecorator --> HoaDon: hoaDon
+Topping --|> HoaDonDecorator
+Sauce --|> HoaDonDecorator
+DongGoiDacBiet --|> HoaDonDecorator
+MaGiamGia --|> HoaDonDecorator
+@enduml

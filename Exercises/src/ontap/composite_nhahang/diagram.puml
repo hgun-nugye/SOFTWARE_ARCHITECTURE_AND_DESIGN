@@ -1,0 +1,28 @@
+@startuml
+
+abstract class AbstractDish{
+    + double getPrice()
+    + void addDish(AbstractDish dish)
+    + void removeDish(AbstractDish dish)
+    + void display (String prefix)
+}
+
+class Combo{
+    - String name
+    - List<AbstractDish> items
+    + Combo(String name)
+    + void addDish(AbstractDish dish)
+    + void removeDish(AbstractDish dish)
+}
+
+class Dish{
+    - String info
+    - double price
+    + Dish(String info, double price)
+}
+
+Combo --|> AbstractDish
+Dish --|> AbstractDish
+Combo --> AbstractDish : contains
+
+@enduml

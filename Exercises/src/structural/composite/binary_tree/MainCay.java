@@ -13,5 +13,8 @@ public class MainCay {
         phai.themTrai( new NutLa(11));
         phai.themPhai(new NutLa(13));
         n.duyet();
+        System.out.println("Xoa nut phai");
+        n.xoaPhai();
+        n.duyet();
     }
 }

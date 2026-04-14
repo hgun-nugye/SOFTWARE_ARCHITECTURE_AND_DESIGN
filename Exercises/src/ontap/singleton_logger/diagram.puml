@@ -1,0 +1,24 @@
+@startuml
+class Program{
+    - String id
+    + void writeLog(String content)
+
+}
+
+class Logger{
+    - {static} Logger instance
+    - Logger()
+    + {static} Logger getInstance()
+    + void writeLog(String content)
+    + void printLog()
+}
+
+class LogItem{
+    - DateTime logTime
+    - String logContent
+    - LogItem(DateTime logTime, String logContent)
+}
+
+Program ..> Logger
+Logger o--> LogItem: contains
+@enduml

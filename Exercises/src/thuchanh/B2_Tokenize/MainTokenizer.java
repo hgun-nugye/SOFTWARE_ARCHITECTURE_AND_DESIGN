@@ -16,7 +16,9 @@ public class MainTokenizer {
         for(String i :token.tokenize()){
             System.out.println(i);
         }
-        ITokenizer test = new PuntuationFilter(new StopWordFilter(new BasicTokenizer("Tokenize là quá trình tách một chuỗi thành các từ.")));
+        ITokenizer test = new PuntuationFilter(new StopWordFilter(new BasicTokenizer("Tokenize..... là quá trình tách một chuỗi thành các từ.")));
+        ITokenizer test2 = new PuntuationFilter(new StopWordFilter(new BasicTokenizer("           ,,,.,............")));
         System.out.println(test.tokenize());
+        System.out.println(test2.tokenize());
     }
 }

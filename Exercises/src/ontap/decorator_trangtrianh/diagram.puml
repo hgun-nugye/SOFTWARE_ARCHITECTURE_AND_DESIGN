@@ -1,0 +1,31 @@
+@startuml
+
+abstract class Picture{
+    + void show()
+}
+
+class BasicPicture{
+    + String pictureName
+    + Picture(String pictureName)
+    + void show()
+}
+
+class PictureDecorator{
+    + PictureDecorator(Picture picture)
+    + void show()
+}
+
+class BorderDecorator{}
+class WatermarkDecorator{}
+class FilterDecorator{}
+
+BasicPicture --|> Picture
+PictureDecorator --|> Picture
+PictureDecorator --> Picture: picture
+
+BorderDecorator --|> PictureDecorator
+WatermarkDecorator --|> PictureDecorator
+FilterDecorator --|> PictureDecorator
+
+
+@enduml

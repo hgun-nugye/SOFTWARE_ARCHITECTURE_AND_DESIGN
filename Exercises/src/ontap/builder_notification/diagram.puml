@@ -1,0 +1,34 @@
+@startuml
+abstract class NotificationBuilder{
+    + String title
+    + String message
+    + String icon
+    + String sound
+    + String priority
+    + String actionButton
+
+    + setTitle(title: String): NotificationBuilder
+    + setMessage(message: String): NotificationBuilder
+    + setIcon(icon: String): NotificationBuilder
+    + setSound(sound: String): NotificationBuilder
+    + setPriority(priority: String): NotificationBuilder
+    + setActionButton(actionButton: String): NotificationBuilder
+    + build(): Notification
+}
+
+class Notification{
+    + String title
+    + String message
+    + String icon
+    + String sound
+    + String priority
+    + String actionButton
+
+    + Notification()
+    + Notification(title: String, message: String, icon: String,
+                    sound: String, priority: String, actionButton: String)
+}
+
+NotificationBuilder ..> Notification : builds
+
+@enduml
