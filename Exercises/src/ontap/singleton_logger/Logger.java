@@ -9,7 +9,7 @@ public class Logger {
     private static Logger instance;
     private List<LogItem> logs;
 
-    private Logger(){
+    protected Logger(){
         this.logs = new ArrayList<>();
     }
 

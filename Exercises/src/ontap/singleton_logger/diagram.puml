@@ -7,7 +7,7 @@ class Program{
 
 class Logger{
     - {static} Logger instance
-    - Logger()
+    # Logger()
     + {static} Logger getInstance()
     + void writeLog(String content)
     + void printLog()
@@ -16,7 +16,7 @@ class Logger{
 class LogItem{
     - DateTime logTime
     - String logContent
-    - LogItem(DateTime logTime, String logContent)
+    + LogItem(DateTime logTime, String logContent)
 }
 
 Program ..> Logger
