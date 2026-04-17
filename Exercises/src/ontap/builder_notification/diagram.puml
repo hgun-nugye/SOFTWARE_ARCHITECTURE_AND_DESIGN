@@ -1,11 +1,11 @@
 @startuml
 abstract class NotificationBuilder{
-    + String title
-    + String message
-    + String icon
-    + String sound
-    + String priority
-    + String actionButton
+    - String title
+    - String message
+    - String icon
+    - String sound
+    - String priority
+    - String actionButton
 
     + setTitle(title: String): NotificationBuilder
     + setMessage(message: String): NotificationBuilder
@@ -17,18 +17,18 @@ abstract class NotificationBuilder{
 }
 
 class Notification{
-    + String title
-    + String message
-    + String icon
-    + String sound
-    + String priority
-    + String actionButton
+       - String title
+       - String message
+       - String icon
+       - String sound
+       - String priority
+       - String actionButton
 
     + Notification()
     + Notification(title: String, message: String, icon: String,
                     sound: String, priority: String, actionButton: String)
 }
 
-NotificationBuilder ..> Notification : builds
+NotificationBuilder --> Notification : builds
 
 @enduml

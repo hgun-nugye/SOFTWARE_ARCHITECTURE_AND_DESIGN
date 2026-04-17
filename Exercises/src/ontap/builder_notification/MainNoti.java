@@ -11,5 +11,11 @@ public class MainNoti {
                 .setActionButton("Reply")
                 .build();
         System.out.println(noti);
+
+        Notification n1 = new NotificationBuilder()
+                .setTitle("Thông báo")
+                .setMessage("Bạn có tin nhắn mới")
+                .build();
+        System.out.println(n1);
     }
 }

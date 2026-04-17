@@ -24,12 +24,12 @@ public class Notification {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("NOTIFICATION DETAILS\n");
-        sb.append("Title: ").append(title).append("\n");
-        sb.append("Message: ").append(message).append("\n");
-        sb.append("Icon: ").append(icon).append("\n");
-        sb.append("Sound: ").append(sound).append("\n");
-        sb.append("Priority: ").append(priority).append("\n");
-        sb.append("Action Button: ").append(actionButton).append("\n");
+        if (title != null) sb.append("Title: ").append(title).append("\n");
+        if (message != null) sb.append("Message: ").append(message).append("\n");
+        if (icon != null) sb.append("Icon: ").append(icon).append("\n");
+        if (sound != null) sb.append("Sound: ").append(sound).append("\n");
+        if (priority != null) sb.append("Priority: ").append(priority).append("\n");
+        if (actionButton != null) sb.append("Action Button: ").append(actionButton).append("\n");
         return sb.toString();
     }
 }
