@@ -19,7 +19,6 @@ public class SanPham {
         sb.append(String.format("Tên SP: %-15s\t\t", tenSP));
         sb.append(String.format("Đơn giá: %,.2f\t\t", donGia));
         sb.append("Số lượng: ").append(soLuong).append("\n");
-        sb.append("--------------------------------------------------------------");
         return sb.toString();
     }
 

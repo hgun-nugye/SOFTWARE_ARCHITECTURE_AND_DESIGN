@@ -31,8 +31,8 @@ public class DataAccessImpl implements IDataAccess {
     }
 
     @Override
-    public void delete(String sp) {
-        boolean remove= this.dsSanPham.removeIf(maSP -> maSP.getMaSP().equals(sp));
+    public void delete(SanPham sp) {
+        boolean remove= this.dsSanPham.removeIf(maSP -> maSP.getMaSP().equals(sp.getMaSP()));
         if(remove){
             System.out.println("Xóa sản phẩm thành công!");
         }
