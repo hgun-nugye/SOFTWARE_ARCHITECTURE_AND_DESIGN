@@ -1,0 +1,41 @@
+@startuml
+interface Widget {
+    + build() : String
+}
+
+class TextWidget{
+    - text : String
+    + build() : String
+}
+
+class ButtonWidget{
+    - label : String
+    + build() : String
+}
+
+abstract class LayoutDecorator {
+    # child : Widget
+    + build() : String
+}
+
+class Center{
+    + build() : String
+}
+
+class Container{
+    - color : String
+    + build() : String
+}
+
+class Row{
+    + build() : String
+}
+
+Widget <|.. TextWidget
+Widget <|.. ButtonWidget
+Widget <|.. LayoutDecorator
+LayoutDecorator <|-- Center
+LayoutDecorator <|-- Container
+LayoutDecorator <|-- Row
+LayoutDecorator o-- Widget
+@enduml
