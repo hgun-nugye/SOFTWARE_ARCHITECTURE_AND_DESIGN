@@ -1,0 +1,22 @@
+@startuml
+abstract class Menu{
+    + Menu (String name, double price)
+    + Menu addItem(Menu item)
+    + Menu removeItem(Menu item)
+    + void print()
+}
+
+class MenuComponent{
+    - String nameComponent
+}
+
+class MenuItem{
+    - String name
+    - double price
+}
+
+MenuComponent --|> Menu
+MenuItem --|> Menu
+MenuComponent ..> Menu: items
+
+@enduml

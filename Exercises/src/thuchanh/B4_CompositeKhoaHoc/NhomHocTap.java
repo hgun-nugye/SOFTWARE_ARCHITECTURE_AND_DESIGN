@@ -35,7 +35,7 @@ public class NhomHocTap extends KHHT{
         StringBuilder sb = new StringBuilder();
         sb.append(prefix)
                 .append("└── ")
-                .append(String.format("%-34s", this.ten)) // Căn lề trái 20 ký tự cho tên
+                .append(String.format("%-34s", this.ten))
                 .append(" | Tín chỉ: ").append(String.format("%2d", this.tongSoTinChi()))
                 .append(" | Học phí: ").append(formattedHP)
                 .append("\n");

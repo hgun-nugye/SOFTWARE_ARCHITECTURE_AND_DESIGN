@@ -1,0 +1,40 @@
+@startuml
+enum LogLevel {
+    INFO
+    WARNING
+    ERROR
+}
+
+class Logger {
+    - instance : Logger
+    - time : boolean
+    - output : String
+    - Logger(time:boolean, output:String)
+    + log(message:String, level:LogLevel) : void
+    + getInstance() : Logger
+}
+
+class Builder {
+    - time : boolean
+    - output : String
+    + setTime(time:boolean) : Builder
+    + setOutput(output:String) : Builder
+    + build() : Logger
+}
+
+Logger "1" o-- "1" Builder : uses
+Logger ..> LogLevel
+
+note right of Logger
+Singleton:
+- instance duy nhất
+- private constructor
+- build() tạo ra instance
+end note
+
+note right of Builder
+Builder:
+- cấu hình Logger
+- setTime, setOutput
+end note
+@enduml
