@@ -1,5 +1,5 @@
 @startuml
-abstract class NotificationBuilder{
+class NotificationBuilder{
     - String title
     - String message
     - String icon

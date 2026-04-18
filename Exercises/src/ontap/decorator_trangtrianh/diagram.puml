@@ -5,13 +5,13 @@ abstract class Picture{
 }
 
 class BasicPicture{
-    + String pictureName
+    - String pictureName
     + Picture(String pictureName)
     + void show()
 }
 
 class PictureDecorator{
-    + PictureDecorator(Picture picture)
+    + PictureDecorator(Picture p)
     + void show()
 }
 

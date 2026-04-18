@@ -21,25 +21,26 @@ abstract class HoaDonDecorator{
 }
 
 class Topping{
-    + String tenTopping
-    + double giaTopping
+    - String tenTopping
+    - double giaTopping
     + void getMoTa()
     + double getGia()
 }
 class Sauce{
-    + String tenSauce
-    + double giaSauce
+    - String tenSauce
+    - double giaSauce
     + void getMoTa()
     + double getGia()
 }
 class DongGoiDacBiet{
-    +String tenDongGoi
+    - String tenDongGoi
+    - double giaDongGoi
     + void getMoTa()
     + double getGia()
 }
 class MaGiamGia{
-    + String tenMaGiamGia
-    + double giaTriGiam
+    - String tenMaGiamGia
+    - double giaTriGiam
     + void getMoTa()
     + double getGia()
 }
