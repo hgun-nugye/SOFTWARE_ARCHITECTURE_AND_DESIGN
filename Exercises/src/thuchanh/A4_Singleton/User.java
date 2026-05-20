@@ -8,8 +8,9 @@ public class User {
     }
 
     public void vote(String candidate){
-        Election election = Election.getInstance();
-        election.submitVote(candidate, this.name);
+//        Election election = Election.getInstance();
+//        election.submitVote(candidate, this.name);
+        Election.getInstance().submitVote(candidate, this.name);
     }
 
 
