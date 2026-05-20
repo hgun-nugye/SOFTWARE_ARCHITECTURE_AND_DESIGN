@@ -1,0 +1,41 @@
+@startuml
+
+interface ATMState{
+    + void withdraw(int amount)
+
+}
+
+class Ready{
+    + void withdraw(int amount)
+
+}
+
+class Limit{
+    + void withdraw(int amount)
+
+}
+
+class OutOfMoney{
+    + void withdraw(int amount)
+
+}
+
+class ATMMachine {
+    - ATMState currentState
+    - int cashInMachine
+    - int MAX_WITHDRAWAL
+    + ATMMachine(int initialCash)
+    + void setState(ATMState state)
+    + void withdraw (int amount
+    + int getCashInMachine()
+    + void setCashInMachine(int cash)
+    + int getMaxWithdrawal()
+}
+
+ATMMachine o-> ATMState: uy quyen
+ATMState <|.. Ready
+ATMState <|.. Limit
+ATMState <|.. OutOfMoney
+
+
+@enduml
