@@ -1,0 +1,40 @@
+@startuml
+
+interface "ISoSanh<T>" as ISoSanh{
+    + int soSanh(T o1, T o2)
+}
+
+class SinhVien{
+    - String hoTen
+    - Date ngaySinh
+    - float dTB
+
+    + String getHoten()
+    + float getDiemTB()
+    + String toString()
+}
+
+class QLSV{
+    - List<SinhVien> dssv
+    - ISoSanh<SinhVien> soSanh
+
+    + void setSoSanh(ISoSanh<SinhVien> soSanh)
+    + void sapXep()
+    + void themSV(SinhVien sv)
+    + void inDS()
+}
+
+class SoSanhTheoTen{}
+
+class SoSanhTheoDiem{}
+
+SoSanhTheoTen ..> SinhVien
+SoSanhTheoDiem ..> SinhVien
+
+SoSanhTheoTen ..|> ISoSanh
+SoSanhTheoDiem ..|> ISoSanh
+
+QLSV o-> ISoSanh
+QLSV --> SinhVien: dssv
+
+@enduml
