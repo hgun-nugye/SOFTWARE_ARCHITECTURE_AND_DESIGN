@@ -1,0 +1,25 @@
+@startuml
+
+interface Tinh{
+    + float tinh(float a, float b)
+}
+
+class Context{
+    - Tinh tinhToan
+    + void setTinhToan(Tinh tinhToan)
+    + float tinh( float a, float b)
+
+}
+
+class Cong{}
+class Tru{}
+class Nhan{}
+class Chia{}
+
+Tinh <|.. Cong
+Tinh <|.. Tru
+Tinh <|.. Nhan
+Tinh <|.. Chia
+
+Tinh <.o Context
+@enduml
