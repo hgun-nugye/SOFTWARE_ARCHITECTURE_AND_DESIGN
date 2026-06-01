@@ -1,0 +1,26 @@
+@startuml
+class ThueBao{
+    - ITrangThai trangThai
+    - double soDu
+    + ThueBao(double soDu)
+    + double getSoDu()
+    + void setSoDu(double soDu)
+    + void setTrangThai(ITrangThai trangThai)
+    + void napTien(double soTien)
+    + void thucHienCuocGoi(int soGiay)
+    + void inThongTin()
+}
+
+interface ITrangThai{
+    + void napTien(ThueBao context,double soTien)
+    + void thucHienCuocGoi(ThueBao context,int soGiay)
+    + void inThongTin(ThueBao context)
+}
+
+class TrangThaiThuong implements ITrangThai{}
+class TrangThaiBac implements ITrangThai{}
+class TrangThaiVang implements ITrangThai{}
+
+ThueBao o--> ITrangThai: uy quyen xu ly >
+
+@enduml

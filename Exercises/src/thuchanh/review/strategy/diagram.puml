@@ -1,0 +1,45 @@
+@startuml
+class GioHang {
+    - List<MatHang> dsMatHang
+    - IKhuyenMaiStrategy khuyenMai
+    - IThanhToanStrategy thanhToan
+    + void themMatHang(MatHang mh)
+    + void setKhuyenMai(IKhuyenMaiStrategy km)
+    + void setThanhToan(IThanhToanStrategy tt)
+    + double TinhTongTienGoc()
+    + void thucHienThanhToan()
+}
+
+class MatHang{
+    - String tenMH
+    - int soluong
+    - double donGia
+    + double getThanhTien()
+}
+
+interface IKhuyenMaiStrategy{
+    + double tinhTienGiam(double TongTien)
+}
+
+class KhuyenMaiPhanTram implements IKhuyenMaiStrategy{
+    - double phanTramGiam
+    - double GiamToiDa
+}
+
+class KhuyenMaiCoDinh implements IKhuyenMaiStrategy{
+    - double soTienGiam
+}
+
+interface IThanhToanStrategy{
+    + void ThanhToan(double tongTienCanThanhToan)
+}
+
+class ThanhToanCOD implements IThanhToanStrategy{}
+
+class ThanhToanMastercard implements IThanhToanStrategy{}
+
+GioHang *--> MatHang: chua >
+GioHang o--> IKhuyenMaiStrategy: ap dung >
+GioHang o--> IThanhToanStrategy: su dung >
+
+@enduml
