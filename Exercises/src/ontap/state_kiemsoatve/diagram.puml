@@ -1,0 +1,19 @@
+@startuml
+
+class TurnstileGate {
+    - GateState state
+    + void insertCard()
+    + void passThrough()
+}
+
+interface GateState {
+    + void insertCard(TurnstileGate gate)
+    + void passThrough(TurnstileGate gate)
+}
+
+class LockedState implements GateState
+class UnlockedState implements GateState
+
+TurnstileGate o--> GateState
+
+@enduml

@@ -1,0 +1,40 @@
+@startuml
+
+class CoPhieu{
+    - int maCP
+    - String tenCP
+    - int giaCP
+    + CoPhieu(int maCP, String tenCP, int giaCP)
+    + void setGiaCP(int giaCP)
+    + void setTenCP(String tenCP)
+}
+
+class Stock{
+    - List<CoPhieu> dsCP
+    - List<NDT> dsNDT
+    + void dangKy(NDT ndt)
+    + void huyDangKy(NDT ndt)
+    + void themCP(CoPhieu cp)
+    + void thongBaoCPMoi(CoPhieu cp)
+    + void capNhatCP(CoPhieu cp)
+}
+
+abstract class NDT{
+    + {abstract} void nhanThongBaoCP(CoPhieu cp)
+    + {abstract} void capNhatCP(CoPhieu cp)
+}
+
+class NDTA{
+    - String ten
+}
+class NDTB{
+    - String ten
+    - List<String> dsThongBao
+}
+
+Stock *--> CoPhieu: dsCP
+Stock o--> NDT: dsNDT
+NDTA ..|> NDT
+NDTB ..|> NDT
+
+@enduml

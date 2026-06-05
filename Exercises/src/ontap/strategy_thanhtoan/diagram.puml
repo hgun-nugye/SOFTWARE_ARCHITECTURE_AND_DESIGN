@@ -1,0 +1,20 @@
+@startuml
+class Order{
+    - double amount
+    - PaymentStrategy payment
+    + void thanhToan()
+}
+
+interface PaymentStrategy{
+    + void thanhToan(double amount)
+}
+
+class CreditCardPayment implements PaymentStrategy{}
+
+class EWalletPayment implements PaymentStrategy{}
+
+class BankTransferPayment implements PaymentStrategy{}
+
+Order o--> PaymentStrategy: uses
+
+@enduml

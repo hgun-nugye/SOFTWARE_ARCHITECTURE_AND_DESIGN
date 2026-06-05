@@ -1,0 +1,26 @@
+@startuml
+class SupportHandler{
+    - SupportHandler nextHandler
+    + SupportHandler setNextHandler(SupportHandler next)
+    + void handleRequest(String request)
+}
+
+class BasicSupportHandler extends SupportHandler{
+    - String name
+    - String position
+    - SupportHandler nextHandler
+}
+class TechnicalSupportHandler extends SupportHandler{
+    - String name
+    - String position
+    - SupportHandler nextHandler
+}
+class ManagerSupportHandler extends SupportHandler{
+    - String name
+    - String position
+    - SupportHandler nextHandler
+}
+
+SupportHandler --> SupportHandler: set next handler
+
+@enduml

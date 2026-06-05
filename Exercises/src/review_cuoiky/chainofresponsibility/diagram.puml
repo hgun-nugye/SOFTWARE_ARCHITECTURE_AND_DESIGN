@@ -1,0 +1,31 @@
+@startuml
+
+class PhieuThue{
+    - String maNV
+    - String hoTen
+    - double thuNhap
+    - double tongThue=0
+    - List<String> chiTietThue
+
+    + PhieuThue(String maNV, String hoTen, double thuNhap)
+    + void congThue(double thue)
+    + void themChiTiet(String chiTiet)
+    + void inPhieuThu()
+}
+
+abstract class BacThueHandler{
+    # BacThueHandler nextBac
+    + BacThueHandler setNextBac(BacThueHandler next)
+    + {abstract} void tinhThue(double tienConLai, PhieuThue thue)
+}
+
+class ThueBac1 extends BacThueHandler{}
+class ThueBac2 extends BacThueHandler{}
+class ThueBac3 extends BacThueHandler{}
+class ThueBac4 extends BacThueHandler{}
+class ThueBac5 extends BacThueHandler{}
+
+BacThueHandler ..> PhieuThue
+BacThueHandler --> BacThueHandler: next
+
+@enduml

@@ -1,0 +1,48 @@
+@startuml
+
+class HoiVien{
+    - int diem=0
+    - int soNgayTap =0
+    - String maHoiVien
+    - IState state
+    + HoiVien(int diem, int soNgayTap, String maHoiVien)
+    + void setDiem(int diem)
+    + void setSoNgayTap(int soNgay)
+    + void setState(IState state)
+    + void napGoi(int diem)
+    + void tapLuyen(int soNgayTap)
+    + void kiemTraTrangThai()
+}
+
+interface IState{
+    + void napGoi(HoiVien hv, int diem)
+    + void tapLuyen(HoiVien hv, int soNgayTap)
+    + void inThongTin()
+}
+
+class TrangThaiThuong{
+    - final int phiTap = 50000
+    + void napGoi(HoiVien hv, int diem)
+    + void tapLuyen(HoiVien hv, int soNgayTap)
+    + void inThongTin()
+}
+
+class TrangThaiBac{
+    - final int phiTap = 45000
+    + void napGoi(HoiVien hv, int diem)
+    + void tapLuyen(HoiVien hv, int soNgayTap)
+    + void inThongTin()
+}
+
+class TrangThaiVang{
+    - final int phiTap = 40000
+    + void napGoi(HoiVien hv, int diem)
+    + void tapLuyen(HoiVien hv, int soNgayTap)
+    + void inThongTin()
+}
+
+HoiVien *--> IState
+TrangThaiThuong --|> IState
+TrangThaiBac --|> IState
+TrangThaiVang --|> IState
+@enduml

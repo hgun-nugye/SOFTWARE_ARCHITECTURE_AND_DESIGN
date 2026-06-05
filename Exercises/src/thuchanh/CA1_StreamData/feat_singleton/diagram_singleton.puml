@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Listener{
+    + void update(T data)
+}
+
+class Stream{
+    - List<Listener> listeners
+    + void addEvent(T t)
+    + void addListener(Listener l)
+}
+
+class MonHoc{
+    - String maMon
+    - String tenMon
+    + MonHoc(String maMon, String tenMon)
+}
+
+class Client{
+    + void update(List ds)
+}
+
+class DataAccess{
+    - static DataAccess instance
+    - List<MonHoc> dsMonHoc
+    - Stream<List<MonHoc>> stream
+    + static DataAccess getInstance()
+    + Stream<List<MonHoc>> getStream()
+    + void themMonHoc(MonHoc mh)
+    + void capNhatMonHoc(String maMon,String tenMon)
+    + void xoaMonHoc(String maMon)
+}
+
+Stream --> Listener
+Client ..|> Listener
+DataAccess --> Stream
+DataAccess --> MonHoc
+Client ..> MonHoc
+@enduml

@@ -1,6 +1,5 @@
 package thuchanh.CA1_StreamData;
 
-import javax.xml.crypto.Data;
 
 public class MainStream {
     public static void main(String[] args) {

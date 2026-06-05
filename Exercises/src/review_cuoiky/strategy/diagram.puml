@@ -1,0 +1,73 @@
+@startuml
+class DonDatVe {
+    - String tenPhim
+    - int soLuong
+    - double giaVe
+    + DonDatVe(String tenPhim, int soLuong, double giaVe)
+    + double getGiaVe()
+    + int getSoLuong()
+}
+
+class HoaDonDatVe {
+    - DonDatVe donDatVe
+    - IThanhToan thanhToan
+    - IUuDai uuDai
+    + HoaDonDatVe(DonDatVe donDatVe)
+    + void setThanhToan(IThanhToan thanhToan)
+    + void setUuDai(IUuDai uuDai)
+    + double tinhTienGoc()
+    + double tinhTienPhaiTra()
+    + void inDonDat()
+    + void thucHienThanhToan()
+}
+
+interface IThanhToan {
+    + void thanhToan(double soTien)
+}
+
+interface IUuDai {
+    + double tinhSoTienGiam(double tongTienGoc)
+}
+
+class COD {
+    + void thanhToan(double soTien)
+}
+
+class ViMomo {
+    - double mucGiam
+    + void thanhToan(double soTien)
+}
+
+class Visa {
+    - double mucGiam
+    - double giamToiDa
+    + void thanhToan(double soTien)
+}
+
+class UuDaiPhanTram {
+    - double giam
+    - double giamToiDa
+    + double tinhSoTienGiam(double tongTienGoc)
+}
+
+class UuDaiCoDinh {
+    - double giamTrucTiep
+    + double tinhSoTienGiam(double tongTienGoc)
+}
+
+class UuDaiSinhNhat {
+    - double giam
+    - double giamToiDa
+    + double tinhSoTienGiam(double tongTienGoc)
+}
+
+HoaDonDatVe *--> DonDatVe
+HoaDonDatVe o--> IUuDai
+HoaDonDatVe o--> IThanhToan
+COD ..|> IThanhToan
+ViMomo ..|> IThanhToan
+Visa ..|> IThanhToan
+UuDaiCoDinh ..|> IUuDai
+UuDaiPhanTram ..|> IUuDai
+UuDaiSinhNhat ..|> IUuDai
+@enduml

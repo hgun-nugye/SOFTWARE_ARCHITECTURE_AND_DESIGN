@@ -6,6 +6,7 @@ public class Main {
         simA.inThongTin();
 
         simA.napTien(125000);
+        simA.thucHienCuocGoi(30);
         simA.inThongTin();
 
         simA.napTien(75000);
